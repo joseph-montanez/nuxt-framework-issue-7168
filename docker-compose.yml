@@ -1,0 +1,16 @@
+services:
+  server:
+    build: .
+    container_name: pentab_server
+    environment:
+      - DEVELOPMENT=1
+    ports:
+      - 3000:3000
+    networks:
+      - pentab-tier
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./:/code
+networks:
+  pentab-tier:
